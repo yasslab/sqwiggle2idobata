@@ -18,8 +18,8 @@ end
 
 text = ""
 updated_msgs.reverse.each { |msg|
-  name   = msg.inspect.split(', "')[1][8..-2]
-  time   = msg[:created_at].new_offset(Rational(9, 24)).created_at.strftime("%H:%M%S")
+  name = msg.inspect.split(', "')[1][8..-2]
+  time = msg[:created_at].new_offset(Rational(9, 24)).strftime("%H:%M:%S")
   m = "<b>#{name}</b>: #{msg[:text]} (#{time})<br />"
   text << m
 }
