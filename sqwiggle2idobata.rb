@@ -12,7 +12,7 @@ messages = client.messages
 
 # NOTE: Heroku Scheduler's frequency should be set to "Hourly"
 updated_msgs = messages.all.select do |msg|
-  (Time.now - Time.parse(msg.created_at.to_s)) / 60 <= 60
+  (Time.now - Time.parse(msg.created_at.to_s)) / 60 <= 10
 end
 
 
