@@ -16,15 +16,15 @@ updated_msgs = messages.all.select do |msg|
 end
 
 
-text = ""
+html = ""
 updated_msgs.reverse.each { |msg|
   name = msg.inspect.split(', "')[1][8..-2]
   img  = msg.inspect.split(', "avatar"=>"')[1].split('",').first
   time = msg[:created_at].new_offset(Rational(9, 24)).strftime("%H:%M:%S")
   text = msg[:text].gsub('\n', '<br />')
-  m = "<img src='#{img}' width='32px' height='32px' /> <b>#{name}</b>: #{text} (#{time})<br />"
-  text << m
+  m = "<img src='#{img}' width='16px' height='16px' /> <b>#{name}</b>: #{text} (#{time})<br />"
+  html << m
 }
 
 puts text
-Idobata::Message.create(source: text, format: :html) unless text.empty?
+Idobata::Message.create(source: html, format: :html) unless text.empty?
