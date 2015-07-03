@@ -17,7 +17,7 @@ TODO
 
 1. Set environment variables: 
     - `IDOBATA_END` for Idobata Generic Hook token
-    - Command Example: `heroku config:add IDObATA=hogehogefoobar"`
+    - Command Example: `heroku config:add IDOBATA_END=https://idobata.io/hook/custom/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"`
 2. `heroku create; git push heroku master`
 3. `heroku addons:add scheduler`
 4. Test: `heroku run bundle exec ruby sqwiggle2idobata.rb`
