@@ -22,7 +22,7 @@ updated_msgs.reverse.each { |msg|
   img  = msg.inspect.split(', "avatar"=>"')[1].split('",').first
   time = msg[:created_at].new_offset(Rational(9, 24)).strftime("%H:%M:%S")
   text = msg[:text].gsub("\n", "<br />")
-  h = "<img src='#{img}' width='16px' height='16px' /> <b>#{name}</b>: #{text} (#{time})<br />"
+  h = "<img src='#{img}' width='16px' height='16px' /> <b>#{name}</b>: #{text}<br />"
   html << h
 }
 
