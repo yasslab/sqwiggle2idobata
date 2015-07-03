@@ -26,5 +26,5 @@ updated_msgs.reverse.each { |msg|
   html << h
 }
 
-puts text
+puts html
 Idobata::Message.create(source: html, format: :html) unless html.empty?
