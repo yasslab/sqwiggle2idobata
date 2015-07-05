@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/yasulab/sqwiggle-ruby.git
+  revision: a20347545b1c7aa8ae1c067ba2fc01e304ad54a0
+  specs:
+    sqwiggle-ruby (0.1.1)
+      faraday
+      virtus
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -10,15 +18,12 @@ GEM
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     equalizer (0.0.11)
-    faraday (0.8.9)
-      multipart-post (~> 1.2.0)
+    faraday (0.9.1)
+      multipart-post (>= 1.2, < 3)
     ice_nine (0.11.1)
-    idobata (0.0.7)
-      faraday (~> 0.8.8)
-    multipart-post (1.2.0)
-    sqwiggle-ruby (0.1.1)
-      faraday
-      virtus
+    idobata (0.0.9)
+      faraday (>= 0.8.8)
+    multipart-post (2.0.0)
     thread_safe (0.3.5)
     virtus (1.0.5)
       axiom-types (~> 0.1)
@@ -31,4 +36,4 @@ PLATFORMS
 
 DEPENDENCIES
   idobata
-  sqwiggle-ruby
+  sqwiggle-ruby!

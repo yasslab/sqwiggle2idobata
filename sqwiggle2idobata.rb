@@ -18,8 +18,11 @@ end
 
 html = ""
 updated_msgs.reverse.each { |msg|
-  name = msg.inspect.split(', "')[1][8..-2]
-  img  = msg.inspect.split(', "avatar"=>"')[1].split('",').first
+  # TODO: Use forked repository until PR is merged
+  #name = msg.inspect.split(', "')[1][8..-2]
+  name = msg.author.name
+  #img  = msg.inspect.split(', "avatar"=>"')[1].split('",').first
+  img = msg.author.avatar
   time = msg[:created_at].new_offset(Rational(9, 24)).strftime("%H:%M:%S")
   text = msg[:text].gsub("\n", "<br />")
   h = "<img src='#{img}' width='16px' height='16px' /> <b>#{name}</b>: #{text}<br />"
