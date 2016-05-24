@@ -10,9 +10,9 @@ Sqwiggle.token   = ENV['SQWIGGLE_API_TOKEN']
 client = Sqwiggle.client
 messages = client.messages
 
-# NOTE: Heroku Scheduler's frequency should be set to "Every 10 minutes"
+# NOTE: Heroku Scheduler's frequency should be set to "Every 60 minutes"
 updated_msgs = messages.all.select do |msg|
-  (Time.now - Time.parse(msg.created_at.to_s)) / 60 <= 10
+  (Time.now - Time.parse(msg.created_at.to_s)) / 60 <= 60
 end
 
 
